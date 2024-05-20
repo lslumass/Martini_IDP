@@ -21,22 +21,22 @@ example: KR8 in 0.035 NaCl solution
 ```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -ff martini3001```   
 ### 2. build protein solution
 a. create box   
->```gmx editconf -f kr8_cg.pdb -o box.gro -bt cubic -d 1.0```   
+```gmx editconf -f kr8_cg.pdb -o box.gro -bt cubic -d 1.0```   
 
 b. add water
->```gmx solvate -cp box.gro -cs water.gro -radius 0.21 -o boxw.gro```   
+&emsp;```gmx solvate -cp box.gro -cs water.gro -radius 0.21 -o boxw.gro```   
 
 c. neutralize and add salt   
->```gmx grompp -f em.mdp -c boxw.gro -o ions.tpr -p topol.top -maxwarn 1```   
-```gmx genion -s ions.tpr -p topol.top -o wions.gro -pname NA -nname CL -neutral -conc 0.035```   
+&emsp;```gmx grompp -f em.mdp -c boxw.gro -o ions.tpr -p topol.top -maxwarn 1```   
+&emsp;```gmx genion -s ions.tpr -p topol.top -o wions.gro -pname NA -nname CL -neutral -conc 0.035```   
 
 d. minimization   
->```gmx grompp -f em.mdp -c wions.gro -p topol.top -o em```   
-```gmx mdrun -deffem em```
+&emsp;```gmx grompp -f em.mdp -c wions.gro -p topol.top -o em```   
+&emsp;```gmx mdrun -deffem em```
 
 e. production   
->```gmx grompp -f md.mdp -c em.gro -p topol.top -o md```   
-```gmx mdrun -deffnm md```
+&emsp;```gmx grompp -f md.mdp -c em.gro -p topol.top -o md```   
+&emsp;```gmx mdrun -deffnm md```
 
 ## Build protein-bilayer binding system   
 example: KR8 + PC_PG bilayer   
