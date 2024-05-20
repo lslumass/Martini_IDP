@@ -9,7 +9,8 @@ Improved Martini force field for IDP
 ## Important tools:   
 1. [Martini_OpenMM](https://github.com/maccallumlab/martini_openmm): run Martini simulation in OpenMM   
 2. [Martinize2](https://github.com/marrink-lab/vermouth-martinize): automatically convert all-atom to Martini model   
-3. [Insane](https://github.com/Tsjerk/Insane): build Martini lipid bilayers ()   
+3. [Insane](https://github.com/Tsjerk/Insane): build Martini lipid bilayers   
+>pip install is problometic, use ```python setup.py install```   
 
 ## Tutorials:   
 1. [Martini3 protein solution](http://cgmartini.nl/index.php/2021-martini-online-workshop/tutorials/564-2-proteins-basic-and-martinize-2): build protein model in Martini 3   
@@ -53,9 +54,9 @@ b. convert all-atom model to martini model:
 &emsp;```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -ff martini3001```   
    
 ### 2. build bilayer using Insane   
-a. installation of Insane: ```pip install insane```   
+a. installation of Insane: ```python setup.py install```   
 b. build a 25*25 nm2 bilayer containing 70% POPC and 30% POPG, no salt  
-&emsp;```insane -o bilayer.gro -p topol.top -x 25 -y 25 -z 25 -l POPC:7 -l POPG:3 -sol W```   
+&emsp;```insane -o bilayer.gro -p topol.top -x 25 -y 25 -z 25 -l POPC:7 -l POPG:3 -sol W -ff M3```   
 c. add the following itp files into the topol.top   
 &emsp;```#include "martini_v3.0.0.itp"```   
 &emsp;```#include "martini_v3.0.0_phospholipids_v1.itp```   
