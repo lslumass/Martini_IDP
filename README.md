@@ -15,7 +15,7 @@ Improved Martini force field for IDP
 1. [Martini3 protein solution](http://cgmartini.nl/index.php/2021-martini-online-workshop/tutorials/564-2-proteins-basic-and-martinize-2): build protein model in Martini 3   
 2. [Martini3 membranes](https://www.sciencedirect.com/science/article/pii/S0076687924000946?via%3Dihub#bib14): build complex membranes with Martini 3 
    
-## Simulation of protein solution
+## I. Simulation of protein solution
 example: KR8 in 0.035 NaCl solution   
 ### 1. build Martini protein model
 ```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -ff martini3001```   
@@ -23,7 +23,7 @@ example: KR8 in 0.035 NaCl solution
 a. create box   
 ```gmx editconf -f kr8_cg.pdb -o box.gro -bt cubic -d 1.0```   
 
-b. add water
+b. add water   
 &emsp;```gmx solvate -cp box.gro -cs water.gro -radius 0.21 -o boxw.gro```   
 
 c. neutralize and add salt   
@@ -38,7 +38,7 @@ e. production
 &emsp;```gmx grompp -f md.mdp -c em.gro -p topol.top -o md```   
 &emsp;```gmx mdrun -deffnm md```
 
-## Build protein-bilayer binding system   
+## II. Build protein-bilayer binding system   
 example: KR8 + PC_PG bilayer   
 ### 1. build Martini protein model using Martinize2   
 a. installation of Martinize2: ```pip install vermouth```   
