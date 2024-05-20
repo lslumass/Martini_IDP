@@ -2,6 +2,7 @@ import sys
 
 '''
 This script is used for renaming the atom type name in itp file.
+Usage: python rename_itp.py itp_file
 Date: May 20, 2024
 Authour: Shanlong Li@UMass
 '''
@@ -30,7 +31,6 @@ with open(itp_file[:-4]+'_.itp', 'w') as itp:
             print(line[:-1], file=itp)
         else:
             l = line.split()
-            print(l)
             print(l[0].rjust(3)+' '+(l[1]+'_').ljust(5)+' '+line[9:-1], file=itp)
 
 print('Finished!')
