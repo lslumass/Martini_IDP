@@ -17,9 +17,9 @@ Improved Martini force field for IDP
 
 ## Scripts:
 1. scale.py: scaling the whole martini itp file   
-&emsp;**usage:**```python scale.py scaling_factor```
+**usage:**```python scale.py scaling_factor```
 2. rename_itp.py: rename the atomtype name in protein itp file   
-&emsp;**usage:**```python rename_itp.py itp_file```
+**usage:**```python rename_itp.py itp_file```
 
 ## Examples:
 ## I. Simulation of protein solution
