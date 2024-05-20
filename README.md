@@ -14,7 +14,14 @@ Improved Martini force field for IDP
 ## Tutorials:   
 1. [Martini3 protein solution](http://cgmartini.nl/index.php/2021-martini-online-workshop/tutorials/564-2-proteins-basic-and-martinize-2): build protein model in Martini 3   
 2. [Martini3 membranes](https://www.sciencedirect.com/science/article/pii/S0076687924000946?via%3Dihub#bib14): build complex membranes with Martini 3 
-   
+
+## Scripts:
+1. scale.py: scaling the whole martini itp file   
+&emsp;**usage:**```python scale.py scaling_factor```
+2. rename_itp.py: rename the atomtype name in protein itp file   
+&emsp;**usage:**```python rename_itp.py itp_file```
+
+## Examples:
 ## I. Simulation of protein solution
 example: KR8 in 0.035 NaCl solution   
 ### 1. build Martini protein model
