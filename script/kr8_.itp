@@ -1,0 +1,138 @@
+; This file was generated using the following command:
+; /home/lsl/software/mambaforge/bin/martinize2 -f kr8_at.pdb -ff martini3001 -x kr9_cg.pdb -o topol.top
+; martinize with vermouth 0.9.6
+
+; Pleas cite the following papers:
+; Souza, P C T; Alessandri, R; Barnoud, J; Thallmair, S; Faustino, I; Grünewald, F; Patmanidis, I; Abdizadeh, H; Bruininks, B M H; Wassenaar, T A; Kroon, P C; Melcr, J; Nieto, V; Corradi, V; Khan, H M; Domański, J; Javanainen, M; Martinez-Seara, H; Reuter, N; Best, R B; Vattulainen, I; Monticelli, L; Periole, X; Tieleman, D P; de Vries, A H; Marrink, S J;  Nature Methods 2021; 10.1038/s41592-021-01098-3
+
+[ moleculetype ]
+KR8 1
+
+[ atoms ]
+  1 Q5_   1 LYS BB   1   1 
+  2 SC3_  1 LYS SC1  2 0.0 
+  3 SQ4p_ 1 LYS SC2  3 1.0 
+  4 SP2_  2 ALA BB   4 0.0 
+  5 TC3_  2 ALA SC1  5 0.0 
+  6 P2_   3 ARG BB   6 0.0 
+  7 SC3_  3 ARG SC1  7 0.0 
+  8 SQ3p_ 3 ARG SC2  8 1.0 
+  9 P2_   4 LYS BB   9 0.0 
+ 10 SC3_  4 LYS SC1 10 0.0 
+ 11 SQ4p_ 4 LYS SC2 11 1.0 
+ 12 P2_   5 LYS BB  12 0.0 
+ 13 SC3_  5 LYS SC1 13 0.0 
+ 14 SQ4p_ 5 LYS SC2 14 1.0 
+ 15 P2_   6 ARG BB  15 0.0 
+ 16 SC3_  6 ARG SC1 16 0.0 
+ 17 SQ3p_ 6 ARG SC2 17 1.0 
+ 18 P2_   7 LYS BB  18 0.0 
+ 19 SC3_  7 LYS SC1 19 0.0 
+ 20 SQ4p_ 7 LYS SC2 20 1.0 
+ 21 P2_   8 LYS BB  21 0.0 
+ 22 SC3_  8 LYS SC1 22 0.0 
+ 23 SQ4p_ 8 LYS SC2 23 1.0 
+ 24 P2_   9 ARG BB  24 0.0 
+ 25 SC3_  9 ARG SC1 25 0.0 
+ 26 SQ3p_ 9 ARG SC2 26 1.0 
+ 27 P2_   0 LYS BB  27 0.0 
+ 28 SC3_  0 LYS SC1 28 0.0 
+ 29 SQ4p_ 0 LYS SC2 29 1.0 
+ 30 SP1_  1 GLY BB  30 0.0 
+ 31 P2_   2 SER BB  31 0.0 
+ 32 TP1_  2 SER SC1 32 0.0 
+ 33 SP1_  3 GLY BB  33 0.0 
+ 34 Q5_   4 SER BB  34 0.0 
+ 35 TP1_  4 SER SC1 35 0.0 
+
+[ bonds ]
+; Backbone bonds
+ 1  4 1 0.350 4000
+ 4  6 1 0.350 4000
+ 6  9 1 0.350 4000
+ 9 12 1 0.350 4000
+12 15 1 0.350 4000
+15 18 1 0.350 4000
+18 21 1 0.350 4000
+21 24 1 0.350 4000
+24 27 1 0.350 4000
+27 30 1 0.350 4000
+30 31 1 0.350 4000
+31 33 1 0.350 4000
+33 34 1 0.350 4000
+
+; Side chain bonds
+ 1  2 1 0.330 5000
+ 2  3 1 0.360 5000
+ 6  7 1 0.330 5000
+ 7  8 1 0.380 5000
+ 9 10 1 0.330 5000
+10 11 1 0.360 5000
+12 13 1 0.330 5000
+13 14 1 0.360 5000
+15 16 1 0.330 5000
+16 17 1 0.380 5000
+18 19 1 0.330 5000
+19 20 1 0.360 5000
+21 22 1 0.330 5000
+22 23 1 0.360 5000
+24 25 1 0.330 5000
+25 26 1 0.380 5000
+27 28 1 0.330 5000
+28 29 1 0.360 5000
+31 32 1 0.287 7500
+34 35 1 0.287 7500
+
+#ifdef FLEXIBLE
+; Side chain bonds
+ 4  5 1 0.270 1000000
+#endif
+
+[ constraints ]
+#ifndef FLEXIBLE
+; Side chain bonds
+ 4  5 1 0.270
+#endif
+
+[ angles ]
+; BBB angles
+ 1  4  6 10 127 20
+ 4  6  9 10 127 20
+ 6  9 12 10 127 20
+ 9 12 15 10 127 20
+12 15 18 10 127 20
+15 18 21 10 127 20
+18 21 24 10 127 20
+21 24 27 10 127 20
+24 27 30 10 127 20
+27 30 31 10 127 20
+30 31 33 10 127 20
+31 33 34 10 127 20
+
+; BBS angles regular martini
+ 1  4  5 2 100 25
+ 4  6  7 2 100 25
+ 6  9 10 2 100 25
+ 9 12 13 2 100 25
+12 15 16 2 100 25
+15 18 19 2 100 25
+18 21 22 2 100 25
+21 24 25 2 100 25
+24 27 28 2 100 25
+30 31 32 2 100 25
+33 34 35 2 100 25
+
+; First SBB regular martini
+ 2  1  4 2 100 25
+
+; Side chain angles
+ 1  2  3 2 180.000 25.0
+ 6  7  8 2 180.000 25.0
+ 9 10 11 2 180.000 25.0
+12 13 14 2 180.000 25.0
+15 16 17 2 180.000 25.0
+18 19 20 2 180.000 25.0
+21 22 23 2 180.000 25.0
+24 25 26 2 180.000 25.0
+27 28 29 2 180.000 25.0
+
