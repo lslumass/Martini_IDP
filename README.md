@@ -21,7 +21,7 @@ example: KR8 in 0.035 NaCl solution
 ```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -ff martini3001```   
 ### 2. build protein solution
 a. create box   
-```gmx editconf -f kr8_cg.pdb -o box.gro -bt cubic -d 1.0```   
+&emsp;```gmx editconf -f kr8_cg.pdb -o box.gro -bt cubic -d 1.0```   
 
 b. add water   
 &emsp;```gmx solvate -cp box.gro -cs water.gro -radius 0.21 -o boxw.gro```   
@@ -42,7 +42,8 @@ e. production
 example: KR8 + PC_PG bilayer   
 ### 1. build Martini protein model using Martinize2   
 a. installation of Martinize2: ```pip install vermouth```   
-b. ```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -ff martini3001```   
+b. convert all-atom model to martini model:   
+&emsp;```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -ff martini3001```   
    
 ### 2. build bilayer using Insane   
 a. installation of Insane: ```pip install insane```   
