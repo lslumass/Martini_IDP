@@ -11,6 +11,8 @@ Improved Martini force field for IDP
 2. [Martinize2](https://github.com/marrink-lab/vermouth-martinize): automatically convert all-atom to Martini model   
 3. [Insane](https://github.com/Tsjerk/Insane): build Martini lipid bilayers   
 &emsp;pip install is problometic, use ```python setup.py install```   
+4. [PeptideBuilder](https://github.com/clauswilke/PeptideBuilder)   
+&emsp;```pip install PeptideBuilder```   
 
 ## Tutorials:   
 1. [Martini3 protein solution](http://cgmartini.nl/index.php/2021-martini-online-workshop/tutorials/564-2-proteins-basic-and-martinize-2): build protein model in Martini 3   
@@ -23,6 +25,11 @@ Improved Martini force field for IDP
 **usage:**```python rename_itp.py itp_file```   
 3. run_martini.py: run Martini simulation in OpenMM   
 4. cg_bond.tcl: display bonds for Martini model in VMD   
+&emsp;```source cg_bond.tcl```   
+&emsp;```cg_bonds -topoltype "martini" -top topol.top```   
+5. build_peptide.py: build all-atom pdb file of IDP   
+**usage:** ```python build_peptide.py seq_file```   
+**seq_file: ** ```name sequence```   
 
 ## Examples:
 ## I. Simulation of protein solution
