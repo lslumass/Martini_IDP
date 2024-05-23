@@ -29,7 +29,7 @@ Improved Martini force field for IDP
 &emsp;```cg_bonds -topoltype "martini" -top topol.top```   
 5. build_peptide.py: build all-atom pdb file of IDP   
 **usage:** ```python build_peptide.py seq_file```   
-**seq_file: ** ```name sequence```   
+**seq_file:** ```name sequence```   
 
 ## Examples:
 ## I. Simulation of protein solution
