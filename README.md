@@ -19,15 +19,15 @@ Improved Martini force field for IDP
 2. [Martini3 membranes](https://www.sciencedirect.com/science/article/pii/S0076687924000946?via%3Dihub#bib14): build complex membranes with Martini 3 
 
 ## Scripts:
-1. scale.py: scaling the whole martini itp file   
+1. **scale.py:** scaling the whole martini itp file   
 **usage:**```python scale.py scaling_factor```
-2. rename_itp.py: rename the atomtype name in protein itp file   
+2. **rename_itp.py:** rename the atomtype name in protein itp file   
 **usage:**```python rename_itp.py itp_file```   
-3. run_martini.py: run Martini simulation in OpenMM   
-4. cg_bond.tcl: display bonds for Martini model in VMD   
+3. **run_martini.py:** run Martini simulation in OpenMM   
+4. **cg_bond.tcl:** display bonds for Martini model in VMD   
 &emsp;```source cg_bond.tcl```   
 &emsp;```cg_bonds -topoltype "martini" -top topol.top```   
-5. build_peptide.py: build all-atom pdb file of IDP   
+5. **build_peptide.py:** build all-atom pdb file of IDP   
 **usage:** ```python build_peptide.py seq_file```   
 **seq_file:** ```name sequence```   
 
@@ -83,3 +83,13 @@ b. update topol.top file
 &emsp;Get the new number of water: ```grep -c 'W' system.gro```, and change the number of W in *.top file.   
 &emsp;In gromacs 2024, "gmx insert-molecules" will print out the number of replaced water   
 &emsp;Add the molecule of proteins at the last line: 'KR8      10'   
+
+## Run Martini in OpenMM   
+[martini_openmm](https://github.com/maccallumlab/martini_openmm) is designed for CG simulation in the OpenMM packages.    
+To run martini simulation in OpenMM, use [run_martini.py](script/run_martini.py)   
+### 1. define simulation system   
+&emsp;modify the file name and simulation setups at the begging   
+### 2. barostat   
+&emsp;modify the barostat in "NPT" section for bilayer or non-bilayer system   
+### 3. run simulation
+&emsp;```python run_martini.py```   
