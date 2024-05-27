@@ -89,6 +89,7 @@ b. update topol.top file
 To run martini simulation in OpenMM, use [run_martini.py](script/run_martini.py)   
 ### 1. define simulation system   
 &emsp;modify the file name and simulation setups at the begging   
+&emsp;for different system, friction constant of LangevinIntegrator should be modified to get the same result with gromacs   
 ### 2. barostat   
 &emsp;modify the barostat in "NPT" section for bilayer or non-bilayer system   
 ### 3. run simulation
