@@ -38,7 +38,8 @@ example: KR8 in 0.035 NaCl solution
 for disordered peptide:   
 &emsp;```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -ff martini3001```   
 for folded protein:   
-&emsp;```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -dssp /usr/local/bin/mkdssp -ff martini3001```   
+&emsp;```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -dssp -ff martini3001```   
+&emsp;dssp library in mdtraj will be used to calculate secondary structure information
 
 ### 2. build protein solution
 a. create box   
