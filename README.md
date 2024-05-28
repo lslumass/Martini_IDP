@@ -50,15 +50,20 @@ b. add water
 
 c. neutralize and add salt   
 &emsp;```gmx grompp -f em.mdp -c boxw.gro -o ions.tpr -p topol.top -maxwarn 1```   
-&emsp;```gmx genion -s ions.tpr -p topol.top -o wions.gro -pname NA -nname CL -neutral -conc 0.035```   
+&emsp;```gmx genion -s ions.tpr -p topol.top -o system.gro -pname NA -nname CL -neutral -conc 0.035```   
 
-d. minimization   
-&emsp;```gmx grompp -f em.mdp -c wions.gro -p topol.top -o em```   
-&emsp;```gmx mdrun -deffem em```
-
-e. production   
+d. run simulation   
+&emsp;**in Gromacs:**
+>d1. minimization   
+&emsp;```gmx grompp -f em.mdp -c system.gro -p topol.top -o em```   
+&emsp;```gmx mdrun -deffem em```   
+d2. production   
 &emsp;```gmx grompp -f md.mdp -c em.gro -p topol.top -o md```   
-&emsp;```gmx mdrun -deffnm md```
+&emsp;```gmx mdrun -deffnm md```   
+
+&emsp;**in OpenMM:**
+>&emsp;```python run_martini.py```   
+&emsp;details can be found below
 
 ## II. Build protein-bilayer binding system   
 example: KR8 + PC_PG bilayer   
