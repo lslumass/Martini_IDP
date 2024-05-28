@@ -1,0 +1,21 @@
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_phospholipids_v1.itp
+#include "martini_v3.0.0_solvents_v1.itp"
+#include "martini_v3.0.0_ions_v1.itp"
+#include "kr8.itp"
+
+[ system ]
+; name
+INSANE! Membrane UpperLeaflet>POPC:POPG=7.0:3.0 LowerLeaflet>POPC:POPG=7.0:3.0
+
+
+[ molecules ]
+; name  number
+POPC           473
+POPG           202
+POPC           473
+POPG           202
+W            66415
+NA               615
+CL               211
+KR8		100
