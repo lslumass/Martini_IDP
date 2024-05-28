@@ -46,7 +46,7 @@ a. create box
 &emsp;```gmx editconf -f kr8_cg.pdb -o box.gro -bt cubic -d 1.0```   
 
 b. add water   
-&emsp;```gmx solvate -cp box.gro -cs water.gro -radius 0.21 -o boxw.gro```   
+&emsp;```gmx solvate -cp box.gro -cs water.gro -radius 0.21 -o boxw.gro -p topol.top```   
 
 c. neutralize and add salt   
 &emsp;```gmx grompp -f em.mdp -c boxw.gro -o ions.tpr -p topol.top -maxwarn 1```   
