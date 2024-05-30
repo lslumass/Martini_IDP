@@ -84,17 +84,20 @@ c. add the following itp files into the topol.top
 &emsp;```#include "martini_v3.0.0_solvents_v1.itp"```   
 &emsp;```#include "martini_v3.0.0_ions_v1.itp"```   
 &emsp;```#include "kr8.itp"```   
-d. add salt using gmx genion:   
-&emsp;```gmx grompp -f em.mdp -c bilayer.gro -o ions.tpr -p topol.top -maxwarn 1```   
-&emsp;```gmx genion -s ions.tpr -p topol.top -o wions.gro -pname NA -nname CL -neutral -conc 0.035```   
 
 ### 3. insert protein into the bilayer system   
 a. insert 10 kr8 through replace water (W)   
-&emsp;```gmx insert-molecules -f wions.gro -ci kr8_md.gro -nmol 10 -o system.gro -replace W```   
+&emsp;```gmx insert-molecules -f bilayer.gro -ci kr8_md.gro -nmol 10 -o bilayer_protein.gro -replace W```   
 b. update topol.top file   
-&emsp;Get the new number of water: ```grep -c 'W' system.gro```, and change the number of W in *.top file.   
+&emsp;Get the new number of water: ```grep -c 'W' bilayer_protein.gro```, and change the number of W in *.top file.   
 &emsp;In gromacs 2024, "gmx insert-molecules" will print out the number of replaced water   
 &emsp;Add the molecule of proteins at the last line: 'KR8      10'   
+
+### 4. add salt
+&emsp;add salt using gmx genion:   
+&emsp;```gmx grompp -f em.mdp -c bilayer_protein.gro -o ions.tpr -p topol.top -maxwarn 1```   
+&emsp;```gmx genion -s ions.tpr -p topol.top -o system.gro -pname NA -nname CL -neutral -conc 0.035```   
+
 
 ## Run Martini in OpenMM   
 [martini_openmm](https://github.com/maccallumlab/martini_openmm) is designed for CG simulation in the OpenMM packages.    
