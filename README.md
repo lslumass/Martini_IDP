@@ -36,10 +36,12 @@ Improved Martini force field for IDP
 example: KR8 in 0.035 NaCl solution   
 ### 1. build Martini protein model
 for disordered peptide:   
-&emsp;```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -ff martini3001```   
+&emsp;```martinize2 -f kr8_at.pdb -o topol.top -x kr8_cg.pdb -ff martini3001```   
 for folded protein:   
-&emsp;```martinize2 -f kr8_at.pdb -o kr8.itp -x kr8_cg.pdb -dssp -ff martini3001 -elastic -ef 700.0 -el 0.5 -eu 0.9 -ea 0 -ep 0 -scfix -cys auto```   
-&emsp;dssp library in mdtraj will be used to calculate secondary structure information
+&emsp;```martinize2 -f kr8_at.pdb -o topol.top -x kr8_cg.pdb -dssp -ff martini3001 -elastic -ef 700.0 -el 0.5 -eu 0.9 -ea 0 -ep 0 -scfix -cys auto```   
+&emsp;dssp library in mdtraj will be used to calculate secondary structure information   
+**Note:** martinize2 will also create the molecule_0.itp as default   
+**Note:** you should also revise the itp file included in topol.top file   
 
 ### 2. build protein solution
 a. create box   
