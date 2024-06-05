@@ -11,12 +11,16 @@ input_gro = 'system.gro'
 top_file = 'topol.top'
 log_file = 'md.log'
 xtc_file = 'md.xtc'
+chk_file = 'md.chk'
 
 # simulation setups
 nvt_step = 50000
 npt_step = 50000
 prod_step = 250000000
+log_freq = 1000
 xtc_freq = 5000                     # output frequency
+chk_freq = 5000000                  # checkpoint file frequency
+
 dt = 20*femtosecond                 # time step
 epsilon_r = 15                      # relative electric constant
 T = 303*kelvin                      # system temperature
@@ -79,8 +83,12 @@ sim.saveCheckpoint('equi.chk')
 
 ################################################################################
 ### Production run ###
-sim.reporters.append(StateDataReporter(log_file, 1000, step=True, potentialEnergy=True, totalEnergy=True, density=True, temperature=True, volume=True))
-xtc_reporter = XTCReporter(xtc_file, xtc_freq)
-sim.reporters.append(xtc_reporter)
+sim.reporters.append(StateDataReporter(log_file, log_freq, progress=True, step=True, potentialEnergy=True, totalEnergy=True, temperature=True, speed=True, totalSteps=prod_step))
+sim.reporters.append(XTCReporter(xtc_file, xtc_freq))
+sim.reporters.append(CheckpointReporter(chk_file, chk_freq))
+
 print("Running simulation...")
 sim.step(prod_step)
+
+sim.saveCheckpoint('final.chk')
+print('Finish!')
